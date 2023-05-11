@@ -16,4 +16,5 @@ public class Student {
     private String name;
     @ManyToOne
     private Parent parent;
+    private int age;
 }

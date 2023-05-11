@@ -9,19 +9,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Orders")
-public class Order {
+public class Reclamation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String description;
+    private String reclamation;
     @ManyToOne
     private Parent parent;
-    @ManyToOne
-    private Student student;
-    @ManyToOne
-    private Adress start;
-
-    private boolean isAccepted;
-    private boolean isProcessed;
 }

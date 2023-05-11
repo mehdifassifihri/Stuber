@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class Parent extends User {
         @ManyToOne
         private Adress adress;
+        private String cin;
 }

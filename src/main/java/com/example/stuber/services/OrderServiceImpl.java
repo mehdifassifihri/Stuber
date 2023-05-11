@@ -30,9 +30,9 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ResponseEntity<Object> addOrder(Order order) {
         Adress start = order.getStart();
-        Adress end = order.getEnd();
+
         adressrepository.save(start);
-        adressrepository.save(end);
+
         Optional<Parent> optionalParent = userrepository.findParentById((long)order.getParent().getId());
         if (!optionalParent.isPresent()) {
             return ResponseEntity.notFound().build();
@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
         order.setParent(parent);
         order.setStudent(student);
         order.setStart(start);
-        order.setEnd(end);
+
         Order savedorder = orderrepository.save(order);
         return ResponseEntity.ok(savedorder);
     }

@@ -13,4 +13,7 @@ import java.util.List;
 public interface Orderrepository extends JpaRepository<Order,Long> {
     @Query("SELECT o FROM Order o WHERE o.parent.id = :id")
     List<Order> findOrderByParentId(@Param("id") Long id);
+
+    @Query("SELECT COUNT(o) FROM Order o")
+    Long countOrders();
 }
