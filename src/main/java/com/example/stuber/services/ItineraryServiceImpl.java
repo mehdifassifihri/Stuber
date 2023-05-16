@@ -66,6 +66,11 @@ public class ItineraryServiceImpl implements ItineraryService{
         return ResponseEntity.ok(savedItinerary);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        itineraryrepository.deleteById(id);
+    }
+
     public Optional<Itinerary> getItineraryById(Long id) {
         return itineraryrepository.findById(Long.valueOf(id));
     }

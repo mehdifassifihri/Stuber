@@ -31,4 +31,8 @@ public class Itinerarycontroller {
     void updateItineraryStatus(@PathVariable Long id){
         itineraryService.updateItineraryStatus(id);
     }
+    @DeleteMapping("/{id}")
+    void deleteItineraryById(@PathVariable Long id){
+        itineraryService.deleteById(id);
+    }
 }

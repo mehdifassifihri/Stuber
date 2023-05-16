@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ItineraryService {
     List<Itinerary> getitineraries();
     ResponseEntity<Object> additinerary(Itinerary itinerary);
+    void deleteById(Long id);
     Optional<Itinerary> getItineraryById(Long id);
     void updateItineraryStatus(Long id);
 }

@@ -17,7 +17,9 @@ public class PickupDropoff {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String type;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name = "student_id")
     private Student student;
 
     private LocalDateTime time;
